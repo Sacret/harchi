@@ -73,9 +73,13 @@
  * @ingroup themeable
  */
 ?>
-<div class="promotion">
-  <div class="container">1124</div>
-</div>
+<?php if (!empty($page['promotion'])): ?>
+  <div class="promotion">
+    <div class="container">
+      <?php print render($page['promotion']); ?>
+    </div>
+  </div>
+<?php endif; ?>
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
   <div class="container">
     <div class="navbar-header">
@@ -115,6 +119,28 @@
     <?php endif; ?>
   </div>
 </header>
+
+<?php if (!empty($page['slider'])): ?>
+  <div class="slider">
+    <?php print render($page['slider']); ?>
+  </div>
+<?php endif; ?>
+
+<?php if (!empty($page['events'])): ?>
+  <div class="events">
+    <div class="container">
+      <?php print render($page['events']); ?>
+    </div>
+  </div>
+<?php endif; ?>
+
+<?php if (!empty($page['pre_content'])): ?>
+  <div class="pre-content">
+    <div class="container">
+      <?php print render($page['pre_content']); ?>
+    </div>
+  </div>
+<?php endif; ?>
 
 <div class="main-container container">
 
@@ -166,6 +192,17 @@
 
   </div>
 </div>
-<footer class="footer container">
-  <?php print render($page['footer']); ?>
+
+<?php if (!empty($page['pre_footer'])): ?>
+  <div class="pre-footer">
+    <div class="container">
+      <?php print render($page['pre_footer']); ?>
+    </div>
+  </div>
+<? endif; ?>
+
+<footer class="footer">
+  <div class="container">
+    <?php print render($page['footer']); ?>
+  </div>
 </footer>
