@@ -1,10 +1,14 @@
-@font-face {
-  font-family: 'Handwriting';
-  src: url('../fonts/handwriting.ttf');
-  src: local('☺'),
-       url('../fonts/handwriting.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+.container(@height, @width: @height, @border: 10) {
+  display: table-cell;
+  height: @height;
+  text-align: center;
+  vertical-align: middle;
+  width: @width;
+  img {
+    max-height: @height - @border;
+    max-width: @width - @border;
+    margin: auto;
+  }
 }
 
 .promotion {
@@ -194,7 +198,6 @@
 .front {
   .page-header {
     color: @brand-primary;
-    font-family: 'Handwriting';
     font-size: 75px;
     margin-top: 40px;
     text-align: center;
@@ -229,7 +232,6 @@
 #block-views-news-block {
   .block-title {
     color: @brand-primary;
-    font-family: 'Handwriting';
     font-size: 75px;
     margin-top: 40px;
     margin-bottom: 40px;
@@ -268,7 +270,6 @@
   text-align: center;
   margin-bottom: 30px;
   h2 {
-    font-family: 'Handwriting';
     color: @brand-primary;
     font-size: 60px;
   }
@@ -315,5 +316,33 @@
 #webform-client-form-22 {
   .form-item {
     margin-bottom: 10px;
+  }
+}
+
+.view-menu {
+  margin-bottom: 40px;
+  .views-row {
+    .make-xs-column(12);
+    .make-md-column(4);
+  }
+  h3 {
+    clear: both;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-size: @font-size-h2;
+  }
+  .views-field-field-menu-image .field-content {
+    .container(350px);
+  }
+  .views-field-title {
+    text-transform: uppercase;
+    font-size: @font-size-h4;
+  }
+  .views-field-field-menu-price {
+    color: @brand-primary;
+    .menu-weight {
+      color: #79b64e;
+    }
   }
 }
